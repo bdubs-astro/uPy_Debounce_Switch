@@ -15,7 +15,7 @@ from machine import Pin, Timer
 sw_pin = 15
 switch = Pin(sw_pin, Pin.IN, Pin.PULL_UP)
 
-debounce_delay = 20   # ms 
+debounce_delay = 50   # ms 
 debounce_started = False
 debounce_timer = Timer()
 
