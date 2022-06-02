@@ -11,7 +11,6 @@ switch.irq(handler=sw_event, trigger=Pin.IRQ_FALLING|Pin.IRQ_RISING)
 debounce_timer.init(mode=Timer.ONE_SHOT, period=debounce_delay, callback=debounce_clear)
  ```
  
-<br>
 
 #### Resources:
 
@@ -27,3 +26,12 @@ https://docs.micropython.org/en/latest/library/machine.Timer.html
 <br>
 
 https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html
+
+<br>
+
+### Digital Inputs: Pullup vs. Pulldown Resistors
+
+<img src = "./images for README/NO switch.png" width = "600"/> 
+
+<img src = "./images for README/NC switch.png" width = "600"/> 
+
