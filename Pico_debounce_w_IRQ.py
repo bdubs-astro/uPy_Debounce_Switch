@@ -43,4 +43,11 @@ def sw_callback(pin):
     print( 'Pin %d: prev %s,\tcurr %s' % (sw_pin, bool(not pin.value()), bool(pin.value())) )
  
  
+# display initial switch state
+print( 'Pin %d: initial state %s' % (sw_pin, bool(switch.value())) )
+
 switch.irq(handler=sw_event, trigger=Pin.IRQ_FALLING|Pin.IRQ_RISING)
+
+# loop
+while True:
+    pass
