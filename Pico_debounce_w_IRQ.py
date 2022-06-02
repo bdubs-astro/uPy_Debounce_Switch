@@ -25,8 +25,10 @@ led.value(not switch.value()); # set initial value
 
        
 def debounce_clear(timer): 
-    global debounce_started
+    global debounce_started, switch
     debounce_started = False
+    # take some action ...
+    sw_callback(switch)
         
 def sw_event(pin):
     global sw_pin, debounce_started, debounce_timer, debounce_delay, led
@@ -35,8 +37,6 @@ def sw_event(pin):
     else:
         debounce_started = True
         debounce_timer.init(mode=Timer.ONE_SHOT, period=debounce_delay, callback=debounce_clear)
-        # take some action ...
-        sw_callback(pin)
 
 def sw_callback(pin):
     led.value(not pin.value()) 

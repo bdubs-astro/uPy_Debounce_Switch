@@ -2,8 +2,9 @@
 
 ### Debounce a switch using interrupts.
 
+<br>
 
-Creates an __interrupt handler__ that's called when the switch pin changes state (i.e., __rising or falling edge trigger__). If a debounce cycle has not already been started, the handler creates a __one-shot  timer__, and then takes some action. While this timer is running, any additional interrupts are ignored. After the timer expires, the debounce cycle is cleared so it can begin again.
+Creates an __interrupt handler__ that's called when the switch pin changes state (_i.e._, __rising or falling edge trigger__). If a debounce cycle has not already been started, the handler creates a __one-shot  timer__. While this timer is running, any additional interrupts are ignored. After the timer expires, the desired action is taken (_i.e._, the sw_callback function is called), and the debounce cycle is cleared so it can begin again.
 
 ```
 switch.irq(handler=sw_event, trigger=Pin.IRQ_FALLING|Pin.IRQ_RISING)
