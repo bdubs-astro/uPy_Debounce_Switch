@@ -1,10 +1,10 @@
 '''
-Debounces a switch using interrupts.
+Debounce a switch using interrupts.
 
 Creates an interrupt handler that's called when the switch pin changes state (i.e., rising or falling edge trigger).
-If a debounce cycle has not already been started, the handler creates a one-shot timer, and then takes
-some action. While this timer is running, any additional interrupts are ignored. After the timer expires, the
-debounce cycle is cleared so it can begin again.
+If a debounce cycle has not already been started, the handler creates a one-shot timer. While this timer is running,
+any additional interrupts are ignored. After the timer expires, the desired action is taken (i.e., the sw_callback function
+is called), and the debounce cycle is cleared so it can begin again.
 
 https://docs.micropython.org/en/latest/library/machine.Pin.html?highlight=pin#machine.Pin
 https://docs.micropython.org/en/latest/library/machine.Timer.html
